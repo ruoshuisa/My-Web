@@ -1,38 +1,53 @@
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
+// import { presetUno, presetAttributify, presetIcons } from "unocss";
+import UnoCSS from 'unocss/vite'
 
-import Unocss from "./config/unocss";
-
+// const rollupOptions = {
+//   external: ['vue', 'vue-router'],
+//   output: {
+//     globals: {
+//       vue: 'Vue',
+//     },
+//   },
+// }
 const rollupOptions = {
-  external: ["vue", "vue-router"],
+  external: ['jquery'], // 将 jQuery 排除在外，不打包进 bundle
   output: {
     globals: {
-      vue: "Vue",
+      $: '$', // 全局变量 $ 映射到 jQuery
     },
   },
-};
+}
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      vue: "vue/dist/vue.esm-bundler",
-    },
-  },
-  plugins: [
-    vue(),
-    vueJsx(),
-    Unocss(),
-  ],
+  plugins: [vue(), vueJsx(), UnoCSS()],
   build: {
     rollupOptions,
-    minify: false,
+    minify: 'terser',
+    sourcemap: true, // 输出单独 source文件
+    reportCompressedSize: true, // 生成压缩大小报告
     cssCodeSplit: true,
     lib: {
-      entry: "./src/entry.ts",
-      name: "SSYUI",
-      fileName: "ssy-ui",
-      formats: ["es", "umd", "iife"],
+      entry: './src/entry.ts',
+      name: 'SSYUI',
+      fileName: 'ssy-ui',
+      formats: ['es', 'umd', 'iife'],
     },
   },
-});
+  test: {
+    // enable jest-like global test APIs
+    globals: true,
+    // simulate DOM with happy-dom
+    // (requires installing happy-dom as a peer dependency)
+    environment: 'happy-dom',
+  },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.esm-bundler',
+    },
+  },
+})
