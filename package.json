@@ -11,9 +11,6 @@
     "test": "vitest",
     "dev": "vite",
     "build": "vite build",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
