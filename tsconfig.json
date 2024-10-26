@@ -5,7 +5,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["vite/client", "vitest/globals", "@types/vitest"],
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
