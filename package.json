@@ -1,20 +1,20 @@
 {
-  "name": "ssy-ui-vite",
+  "name": "ssy-ui-vite-hly",
   "type": "module",
-  "version": "0.1.0",
+  "version": "9.8.0",
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
   "main": "index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "vitest",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky",
-    "files": ["dist"]
+    "prepare": "husky"
   },
   "dependencies": {
     "vue": "^3.5.12"
@@ -50,5 +50,9 @@
     "cz-customizable": {
       "config": ".cz-config.cjs"
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
