@@ -6,9 +6,11 @@
 <p align="center">
   基于 Vite 栈的前端工程化实践
 </p>
-
 <p align="center">
 <img src="https://img.shields.io/github/license/hly-h/My-Web">
+<a href="https://codecov.io/github/hly-h/My-Web" >
+ <img src="https://codecov.io/github/hly-h/My-Web/graph/badge.svg?token=1LXUW3N9X8"/>
+ </a>
 </p>
 
 ## Features
