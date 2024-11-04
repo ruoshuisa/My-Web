@@ -1,5 +1,5 @@
 import { defineComponent, openBlock, createElementBlock, normalizeClass, normalizeStyle, createVNode } from "vue";
-const version = "0.1.1";
+const version = "0.3.0";
 const componentPrefix = "S";
 function withInstall(options) {
   options.install = (app) => {
